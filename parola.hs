@@ -1,13 +1,13 @@
 import System.Random
 import Data.Char (chr)
 
--- Generează un caracter aleatoriu dintr-un interval dat
+-- Genereaza un caracter aleatoriu dintr-un interval dat
 randomChar :: (Int, Int) -> IO Char
 randomChar range = do
     n <- randomRIO range
     return (chr n)
 
--- Generează o parolă de lungime dată
+-- Genereaza o parola de lungime dată
 generatePassword :: Int -> IO String
 generatePassword len = sequence $ replicate len (randomChar (33, 126))
 
